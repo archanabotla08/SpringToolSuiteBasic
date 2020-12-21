@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class HelloWorldController {
 
-	@RequestMapping("/web")
+	@GetMapping("/web")
 	public String hello() {
-		return "Hello";
+		return "hello";
 	}
 	
-	@RequestMapping("/web/message")
+	@GetMapping("/web/message")
 	public String message(Model model) {
 		model.addAttribute("messageResponse","This is a custom message");
-		return "This is a custom message";
+		return "message";
 	}
 }
